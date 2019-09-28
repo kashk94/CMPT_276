@@ -27,7 +27,7 @@ document.addEventListener('keyup', function(key){
 window.addEventListener('keyup', function(key){
     if(key.keyCode == 81){
     	if(window.confirm("Quit the application and close the webpage?")==true)
-    		document.close();
+    		window.close();
     }
 });
 
