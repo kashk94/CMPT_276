@@ -24,9 +24,11 @@ document.addEventListener('keyup', function(key){
 });
 
 // press ‘q’ to quit the application (closes the browser page)
-document.addEventListener('keyup', function(key){
-    if(key.keyCode == 81)
-        window.close();
+window.addEventListener('keyup', function(key){
+    if(key.keyCode == 81){
+    	if(window.confirm("Quit the application and close the webpage?")==true)
+    		window.close();
+    }
 });
 
 function isPos(value){
