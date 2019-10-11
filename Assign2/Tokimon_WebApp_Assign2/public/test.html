@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My First Webpage</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+		<script type="text/javascript" src="./js/script.js" defer></script>
+	</head>
+	<body>
+		<h1>My First Paragraph:</h1>
+		<p id="para">Log-on to use system:</p>
+		<!-- <button type="button" name="My Button" id="button1">My Button</button> -->
+
+		<!-- action: server needs to be listening for some information when the form is sent
+		give me a URL where all the information will go to (for now, we just use /login)-->
+		<!-- methods that we can send to a server are: get & post (there are more, but we'll use these two)
+		get is usually used for reading some info
+		post is used for sending info+making some alterations to the server (e.g. to a data that is already stored on the server) -->
+		<form class="" action="/login" method="post">
+			<input id ="in" type="text" name="user" placeholder="Username">
+			<input type="password" name="pwd" value="" placeholder="Password">
+			<!-- submit: send all the info to the server -->
+			<input type="submit" name="" value="SUBMIT">
+		</form>
+	</body>
+</html>
