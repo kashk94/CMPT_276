@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/tokimon.css">
+    <title>Tokidex: Homepage</title>
+  </head>
+  <body>
+    <% include ../partials/nav.ejs %>
+    <h3>Welcome to Tokidex!</h3>
+    <form action="/about" method="get" id="aboutNav">
+    	<button type="submit" class="navButton" id="toc">Get to Know Tokimons</button>
+    </form>
+    <form action="/addTokimon" method="get" id="addNav">
+    	<button type="submit" class="navButton" id="toc">Add/Change Tokimons available in Tokidex</button>
+    </form>
+    <form action="/viewTokimon" method="get" id="viewNav">
+    	<button type="submit" class="navButton" id="toc">View/Delete Existing Tokimons in Tokidex</button>
+    </form>
+  </body>
+  <% include ../partials/footer.ejs %>
+</html>

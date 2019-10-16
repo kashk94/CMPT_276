@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/addtokimon.css">
+    <title>Tokidex: Add/Change Tokimons</title>
+  </head>
+  <body>
+    <% include ../partials/nav.ejs %>
+    <p id="addTokimonDesc">&nbsp;&nbsp;&nbsp;&nbsp;Here, you can <strong>add a new Tokimon</strong> to the Tokidex or change traits of an <strong>existing Tokimon</strong>. <br><br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Note: "Tokimon Name"</strong> and <strong>"Trainer Name"</strong> are required fields. If left blank, Tokimon will not be added or changed in Tokidex. </p><br>
+    <form id="addTokimonForm" action="/displaytokimon" method="post">
+      <fieldset>
+        <legend>Add/Change a Tokimon</legend>
+         <p>
+          <h2 id="tokimonCharac">CHARACTER INFORMATION</h2>
+        </p>
+        <table class="tokimonAttrTable">
+          <tr>
+            <td>
+              <LABEL>Tokimon Name (Cannot be blank!) </LABEL>
+              <input type="text" name="tokimonName" placeholder="Unique or existing name!">
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+            <td>
+              <LABEL>How chubby is it? </LABEL>
+              <input type="range" name="tokimonWeight" id="twId" min="5" max="30" step="1" value="15" oninput="twOutputId.value = twId.value">
+              <output name="tokimonWeightOutput" id="twOutputId" class="abilityVal">15</output> lbs
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+            <td>
+              <LABEL>How tall is it? </LABEL>
+              <input type="range" name="tokimonHeight" id="thId" min="1" max="5" step=".25" value="3" oninput="thOutputId.value = thId.value">
+              <output name="tokimonHeightOutput" id="thOutputId" class="abilityVal">3</output> ft
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <LABEL>Trainer Name (Cannot be blank!) </LABEL>
+              <input type="text" name="trainerName" placeholder="Tokimon trainer's name">
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+          </tr>
+        </table>
+        <br>
+        <p>
+          <h2 id="tokimonCharac">TRAITS AND ABILITIES</h2>
+        </p>
+        <table class="tokimonAttrTable">
+          <tr>
+            <td>
+              <label>Fly&nbsp;<img class="abilityImg" src="https://i.pinimg.com/originals/a3/52/1f/a3521f0ddce3fa4e0f107becb62135d0.jpg" alt="Flying Tokimon"></label>
+              <input type="range" name="tokimonFly" id="tflyId" min="0" max="100" step="1" value="50" oninput="tflyOutputId.value = tflyId.value">
+              <output name="tokimonFlyOutput" id="tflyOutputId" class="abilityVal">50</output>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+            <td>
+              <label>Fight&nbsp;<img class="abilityImg" src="https://www.petsial.com/wp-content/uploads/2019/04/Why-Are-My-Rabbits-Fighting-All-of-a-Sudden-696x696.jpg" alt="Fighting Tokimon"></label>
+              <input type="range" name="tokimonFight" id="tfightId" min="0" max="100" step="1" value="50" oninput="tfightOutputId.value = tfightId.value">
+              <output name="tokimonFightOutput" id="tfightOutputId" class="abilityVal">50</output>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+            <td>
+              <label>Throw Fire&nbsp;<img class="abilityImg" src="https://www.clipartwiki.com/clipimg/detail/56-564760_galactic-fire-ball-mario-fireball-png.png" alt="Fireball"></label>
+              <input type="range" name="tokimonFire" id="tfireId" min="0" max="100" step="1" value="50" oninput="tfireOutputId.value = tfireId.value">
+              <output name="tokimonFireOutput" id="tfireOutputId" class="abilityVal">50</output>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Freeze others&nbsp;<img class="abilityImg" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c1a62701-d467-411c-91f4-a1f452d243ac/d9n27kd-4d79a9c5-273f-49eb-a610-619d5802ad96.png/v1/fill/w_1600,h_1600,strp/wile_e__coyote_frozen_at_ice_cube_by_mega_shonen_one_64_d9n27kd-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTYwMCIsInBhdGgiOiJcL2ZcL2MxYTYyNzAxLWQ0NjctNDExYy05MWY0LWExZjQ1MmQyNDNhY1wvZDluMjdrZC00ZDc5YTljNS0yNzNmLTQ5ZWItYTYxMC02MTlkNTgwMmFkOTYucG5nIiwid2lkdGgiOiI8PTE2MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.4cCe8vuZ81TXEsryanCwnfPYCVKdYvSVXxcU8F_E8q4" alt="Freeze Tokimon"></label>
+              <input type="range" name="tokimonFreeze" id="tfreezeId" min="0" max="100" step="1" value="50" oninput="tfreezeOutputId.value = tfreezeId.value">
+              <output name="tokimonFreezeOutput" id="tfreezeOutputId" class="abilityVal">50</output>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+            <td>
+              <label>Electrify&nbsp;<img class="abilityImg" src="https://static.fjcdn.com/pictures/Bunny_329689_1082480.jpg" alt="Electrifying Tokimon"></label>
+              <input type="range" name="tokimonElectric" id="telectricId" min="0" max="100" step="1" value="50" oninput="telectricOutputId.value = telectricId.value">
+              <output name="tokimonElectricOutput" id="telectricOutputId" class="abilityVal">50</output>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+            <td>
+              <label>Spray Water&nbsp;<img class="abilityImg" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b65b72a2-5888-4ed3-9d54-88dae498f058/dd2tobn-ced4a6b2-f6eb-4a89-ae6e-b808fddb7121.jpg/v1/fill/w_997,h_802,q_70,strp/_ori__rabi_water_spray_by_armkirby_dd2tobn-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAzMCIsInBhdGgiOiJcL2ZcL2I2NWI3MmEyLTU4ODgtNGVkMy05ZDU0LTg4ZGFlNDk4ZjA1OFwvZGQydG9ibi1jZWQ0YTZiMi1mNmViLTRhODktYWU2ZS1iODA4ZmRkYjcxMjEuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.CgPRL3VUq6g1Hpm6W3yYLitiVQBGW9qXayGGzIKYRU0" alt="Water Spraying Tokimon"></label>
+              <input type="range" name="tokimonWater" id="twaterId" min="0" max="100" step="1" value="50" oninput="twaterOutputId.value = twaterId.value">
+              <output name="tokimonWaterOutput" id="twaterOutputId" class="abilityVal">50</output>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            </td>
+          </tr>
+        </table>
+        <button type="submit" id="addTokimonButton">Add/Change Tokimon in Tokidex!</button>
+      </fieldset>
+    </form>
+  </body>
+  <% include ../partials/footer.ejs %>
+</html>

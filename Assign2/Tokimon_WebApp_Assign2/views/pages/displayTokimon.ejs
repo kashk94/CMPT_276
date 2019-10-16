@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<% include ../partials/head.ejs %>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/displaytokimon.css">
+	    <title>Tokidex: View/Delete Tokimons</title>
+	</head>
+	<body>
+		<% include ../partials/nav.ejs %>
+		<table id="tokidexTable">
+			<caption>Toxidex</caption>
+			<thead>
+				<tr>
+					<th>&nbsp;&nbsp;&nbsp;&nbsp;Tokimon</th>
+					<th>&nbsp;&nbsp;&nbsp;&nbsp;Weight</th>
+					<th>&nbsp;&nbsp;&nbsp;&nbsp;Height</th>
+					<th>Tokimon Trainer</th>
+					<th>Electrifying Power</th>
+					<th>Fighting Power</th>
+					<th>Fire Throwing Power</th>
+					<th>Flying Power</th>
+					<th>Freezing Power</th>
+					<th>Water Spraying Power</th>
+					<th colspan="2" id="totalPower">Total Power</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% rows.forEach((r) => { %>
+				<tr>
+					<form action="/removeTokimon/<%= r.tid %>" method="get">
+						<td><%= r.name %></td>
+						<td><%= r.weight %></td>
+						<td><%= r.height %></td>
+						<td><%= r.trainername %></td>
+						<td><%= r.electric %></td>
+						<td><%= r.fight %></td>
+						<td><%= r.fire %></td>
+						<td><%= r.fly %></td>
+						<td><%= r.ice %></td>
+						<td><%= r.water %></td>
+						<td colspan="2"><%= r.total %></td>
+						<td><button type="submit" id="deleteTokimon" class="deleteTokimonButton">Remove Tokimon from Tokidex!</button></td>
+					</form>
+				</tr>
+				<% }); %>
+			</tbody>
+		</table>
+	</body>
+</html>

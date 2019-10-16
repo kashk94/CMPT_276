@@ -5,9 +5,9 @@
   "engines": {
     "node": "10.x"
   },
-  "main": "index.js",
+  "main": "tokimon.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon tokimon.js",
     "test": "node test.js"
   },
   "dependencies": {
