@@ -1,0 +1,28 @@
+#about{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	position: relative;
+	top: 2em;
+	left: 5%;
+	box-sizing: border-box;
+	width: 90%;
+	padding: 1em;
+	margin-bottom: 1em;
+	background: azure;
+	font-size: 1.5em;
+	/*text-align: center;*/
+	font-style: italic;
+	font-weight: bold;
+	line-height: 1.6;
+	overflow-x: break-word;
+	border: outset .5pt #E9EFF1;
+	border-radius: 3px;
+}
+
+p.paragraph{
+	margin: 0;
+}
+
+p.paragraph::first-letter {
+	color: red;
+	font-size: 200%;
+}

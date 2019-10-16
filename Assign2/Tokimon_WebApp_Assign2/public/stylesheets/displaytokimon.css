@@ -1,0 +1,57 @@
+#tokidexTable{
+	background: honeydew;
+	position: relative;
+	left: 3%;
+	width: 94%;
+	border-collapse: collapse;
+	border-top: 4px solid #DCA806;
+	font-size: 1.1em;
+}
+
+caption{
+	color: darkslategrey;
+	font-size: 7em;
+	font-weight: bolder;
+	text-transform: uppercase;
+	/*padding: 0.25em 0 0.25em 0;*/
+	margin-top: 0.25em;
+	border-top: 1px solid #DCA806;
+	text-align: center;
+}
+
+#totalPower{
+	color: crimson;
+	font-size: 2em;
+}
+
+thead tr{
+	background-color: azure;
+	font-size: 1.2em;
+}
+
+tbody tr {
+	border-bottom: 1px solid white;
+}
+
+tbody tr:nth-child(even) {
+	background-color: seashell;
+}
+
+tbody td {
+	padding: 0.75em;
+}
+
+.deleteTokimonButton{
+	background-color: #A9182B;
+	border-color: #A9182B;
+	text-align: center;
+	text-transform: uppercase;
+	color: white;
+	font-weight: bold;
+	float: right;
+	margin-right: 1.5vw;
+	border: solid .25vw #A9182B;
+	border-radius: 3px;
+	font-size: .75em;
+}
+
